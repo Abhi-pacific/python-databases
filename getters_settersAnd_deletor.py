@@ -1,4 +1,3 @@
-import re
 class Details:
     """Here self represent the object of a class means for example "an = Details(Abhsihek,Chauhan)" so self represent the an """
     try:
@@ -21,8 +20,18 @@ class Details:
         names = data[0].split('.')
         self.fname = names[0]
         self.lname = names[1]
-    #
-
-
+    # Creating the deletor so that we can also deleter the email if we want to 
+    @email.deleter
+    def email(self):
+        self.fname = None
+        self.lname = None
+    
+def main():
+    A1 = Details('Abhishek','Chauhan')
+    print(A1.email)
+    A1.email = 'Aditya.Chauhan@gmail.com'
+    print(A1.email)
+    print(A1.fname)
+main()
     
                 
