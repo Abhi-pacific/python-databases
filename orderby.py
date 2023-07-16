@@ -8,3 +8,6 @@ items = c.execute("select * from data where rowid = 3")
 print(items.fetchall())
 conn.commit()
 conn.close()
+"""
+we can also use (like,order by and =,>,<)
+"""
