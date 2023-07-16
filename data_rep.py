@@ -15,9 +15,9 @@ create table data (name text,id integer)
 # inserting into table
 var_data = [('Abhishek chauhan',2254),('Aditya chauhan',2255),('Naveen kumar',2256)]
 c.executemany("insert into data values(?,?)",var_data)
-d = c.execute('select * from data')
+d = c.execute('select rowid,* from data')
 # loops to print specific data
 for item in d:
-    print(f' Your name {item[0]} and your id is {item[1]}')
+    print(f'{item[0]} Your name {item[1]} and your id is {item[2]}')
 conn.commit()
 conn.close()
